@@ -7,3 +7,8 @@
 .hide {
   display: none !important;
 }
+
+:root {
+  --dark-800: #282c34;
+  --blue: #61dafb;
+}
