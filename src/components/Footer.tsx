@@ -7,7 +7,7 @@ export default class Footer extends React.Component {
     return (
       <footer className={styles.footer}>
         <p>
-          <span>React + TS Todo</span>
+          <span>React + TS ToDo</span>
         </p>
       </footer>
     );

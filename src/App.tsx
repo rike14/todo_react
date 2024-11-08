@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Modal from "./components/Modal";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 
@@ -9,8 +10,8 @@ import styles from "./App.module.css";
 import { ITask } from "./interfaces/Task";
 
 function App() {
-
   const [taskList, setTaskList] = useState<ITask[]>([])
+  const [taskToUpdate, setTaskToUpdate] = useState<ITask | null>(null)
 
   const deleteTask = (id: number) => {
     setTaskList(
@@ -18,8 +19,43 @@ function App() {
     )
   }
 
+  const hideOrShowModal = (display: boolean) => {
+    const modal = document.querySelector("#modal")
+    if(display){
+      modal!.classList.remove('hide')
+    } else {
+      modal!.classList.add('hide')
+    }
+  }
+
+  const editTask = (task: ITask):void => {
+    hideOrShowModal(true)
+    setTaskToUpdate(task)
+  }
+
+  const updatedTask = (id: number, title: string, difficulty: number) => {
+    const updatedTask: ITask = {id, title, difficulty}
+
+    const updatedItems = taskList.map((task) => {
+      return task.id === updatedTask.id ? updatedTask : task
+    })
+
+    setTaskList(updatedItems)
+    hideOrShowModal(false)
+  }
+
   return (
     <div className="App">
+      <Modal 
+        children={
+          <TaskForm 
+            btnText="Edit Task" 
+            taskList={taskList} 
+            task={taskToUpdate} 
+            handleUpdate={updatedTask}
+          />
+        } 
+      />
       <Header />
       <main className={styles.main}>
         <div>
@@ -35,6 +71,7 @@ function App() {
           <TaskList 
             taskList={taskList}
             handleDelete={deleteTask}
+            handleEdit={editTask}
           />
         </div>
       </main>
