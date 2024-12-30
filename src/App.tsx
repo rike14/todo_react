@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast, ToastContainer } from 'react-toastify';
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
@@ -17,6 +18,7 @@ function App() {
     setTaskList(
       taskList.filter((task) => task.id !== id)
     )
+    toast.success('Task deleted successfully')
   }
 
   const hideOrShowModal = (display: boolean) => {
@@ -57,6 +59,7 @@ function App() {
         } 
       />
       <Header />
+      <ToastContainer />
       <main className={styles.main}>
         <div>
           <h2>What are you going to do?</h2>

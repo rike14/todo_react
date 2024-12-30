@@ -1,6 +1,7 @@
 import styles from './TaskForm.module.css';
 
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import { ITask } from '../interfaces/Task';
 
 interface ITaskFormProps {
@@ -14,7 +15,7 @@ interface ITaskFormProps {
 const TaskForm = ({btnText, taskList, setTaskList, task, handleUpdate}: ITaskFormProps) => {
   const [id, setId] = useState<number>(0)
   const [title, setTitle] = useState<string>("")
-  const [difficulty, setDifficulty] = useState<number>(0)
+  const [difficulty, setDifficulty] = useState<number | null>(null)
 
   useEffect(() => {
     if(task){
@@ -27,8 +28,14 @@ const TaskForm = ({btnText, taskList, setTaskList, task, handleUpdate}: ITaskFor
   const addTaskHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
+    if (title === '' || (difficulty === null || isNaN(difficulty))) {
+      toast.error('Please fill all fields')
+      return false
+    }
+
     if(handleUpdate){
       handleUpdate(id, title, difficulty)
+      toast.success('Task updated successfully')
     } else {
       const id = Math.floor(Math.random() * 1000)
       const newTask: ITask = { id, title, difficulty }
@@ -36,7 +43,8 @@ const TaskForm = ({btnText, taskList, setTaskList, task, handleUpdate}: ITaskFor
       setTaskList!([...taskList, newTask])
 
       setTitle("")
-      setDifficulty(0)
+      setDifficulty(null)
+      toast.success('Task added successfully')
     }
   }
 
@@ -63,11 +71,11 @@ const TaskForm = ({btnText, taskList, setTaskList, task, handleUpdate}: ITaskFor
       <div className={styles.input_container}>
         <label htmlFor='difficulty'>Difficulty:</label>
         <input 
-          type="text" 
+          type="number" 
           name='difficulty' 
           placeholder='Difficulty task' 
           onChange={handleChange}
-          value={difficulty}
+          value={difficulty ?? ''}
         />
       </div>
       <input type="submit" value={btnText} />
