@@ -1,46 +1,143 @@
-# Getting Started with Create React App
+# ToDoReact
+<a id="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
+<div align="center">
 
-## Available Scripts
+  ![image](/public/logo192.png)
 
-In the project directory, you can run:
+  <h3 align="center">ToDoReact</h3>
 
-### `npm start`
+  <p align="center">
+    This is a simple project using React with TypeScript, which allows you to create Task List.
+    <br />
+  </p>
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📃 About The Project
 
-### `npm test`
+- Show all tasks;
+- Create task;
+- Edit task;
+- Delete task.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### `npm run build`
+## 💎 Built With
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [![Node][Node]][Node-url]
+* [![React][React]][React-url]
+* [![Typescript][Typescript]][Typescript-url]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⏱️ Getting Started
 
-### `npm run eject`
+This is an example of how you can run your project locally.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To get a local copy up and running follow these simple example steps.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠️ Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Node <br>
+    [Download Node and see the documentation how to install and start](https://nodejs.org/pt)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🪄 Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repo
+   ```sh
+   git clone https://github.com/rike14/todo_react.git
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ⚙️ Commands
+
+2. Run commands
+
+  * npm
+    ```sh
+    npm install 
+    ```
+
+    *Or with yarn*
+
+  * yarn
+     ```sh
+    yarn
+     ```
+  
+  <br>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🏜️ Starting
+
+3. Run command
+
+   * npm
+   ```sh
+   npm run start 
+   ```
+   
+    *Or with yarn*
+
+   * yarn
+   ```sh
+   yarn start
+   ```
+
+   *The project will be run on the http://localhost:3000/*
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Project
+
+- [x] Home page where do you create a task and see task list:
+  
+  <img src="./public/images/created_task.png" alt="task_list" width="100%"/>
+
+##
+
+- [x] Editing task:
+  
+  <img src="./public/images/edit_task.png" alt="edit_task" width="100%"/>
+
+##
+
+- [x] Deleted task:
+  
+  <img src="./public/images/deleted_task.png" alt="deleted_task" width="100%"/>
+
+##
+
+- [x] Alerts enabled:
+  
+  <img src="./public/images/alerts.png" alt="alerts" width="100%"/>
+
+## 🧑🏼‍💻 Author
+
+ <img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4E03AQHEAO7lZFv_DQ/profile-displayphoto-shrink_100_100/0/1628044108879?e=2147483647&v=beta&t=THXLaSYL1EF43H1OCCCJVn2m-Cz2HY535lqkyam17B8" width="100px;" alt=""/>
+ <br />
+ <sub><b>Henrique M. Kronhardt</b></sub></a>
+ <br />
+
+[![Linkedin Badge](https://img.shields.io/badge/-Henrique_Kronhardt-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/henriquekronhardt/)](https://www.linkedin.com/in/henriquekronhardt/)
+
+---
+
+Made with ❤️ by Henrique M. Kronhardt 👋🏽 [Get in touch!](https://www.linkedin.com/in/henriquekronhardt/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[Node]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white
+[Node-url]: https://nodejs.org/pt
+[React]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Typescript]: https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white
+[Typescript-url]: https://www.typescriptlang.org/
